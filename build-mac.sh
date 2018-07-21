@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 PATH=$PATH:$(pwd)/depot_tools
 
 mkdir chromium && cd chromium
