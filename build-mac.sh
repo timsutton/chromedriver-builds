@@ -1,10 +1,10 @@
-#!/bin/bash -eu
+#!/bin/bash -eux
 
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 export PATH=$PATH:$(pwd)/depot_tools
 
 mkdir chromium && cd chromium
-fetch --nohooks --no-history chromium
+fetch --no-history chromium
 
 cd src
 
