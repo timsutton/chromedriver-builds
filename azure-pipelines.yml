@@ -1,7 +1,4 @@
-# Xcode
-# Build, test, and archive an Xcode workspace on macOS.
-# Add steps that install certificates, test, sign, and distribute an app, save build artifacts, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=vsts&tabs=schema
 
 trigger:
 - master
@@ -10,11 +7,11 @@ pool:
   vmImage: 'macOS-10.13'
 
 steps:
-- task: Xcode@5
+- task: Bash@3
   inputs:
-    actions: 'build'
-    scheme: ''
-    sdk: 'iphoneos'
-    configuration: 'Release'
-    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-    xcodeVersion: 'default' # Options: 8, 9, 10, default, specifyPath
+    #targetType: 'filePath' # Optional. Options: filePath, inline
+    #filePath: # Required when targetType == FilePath
+    #arguments: # Optional
+    script: './build-mac.sh'
+    #workingDirectory: # Optional
+    #failOnStderr: false # Optional
