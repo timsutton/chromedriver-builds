@@ -7,11 +7,11 @@ pool:
   vmImage: 'macOS-10.13'
 
 steps:
-- task: Bash@3
+- task: ShellScript@2
   inputs:
+    scriptPath: './build-mac.sh'
     #targetType: 'filePath' # Optional. Options: filePath, inline
     #filePath: # Required when targetType == FilePath
     #arguments: # Optional
-    script: './build-mac.sh'
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
